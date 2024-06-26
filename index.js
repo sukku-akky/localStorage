@@ -11,9 +11,14 @@ form.addEventListener("submit",function(event){
     const emailValue = email.value;
     const numberValue = number.value;
 
-    localStorage.setItem('Username',name);
-    localStorage.setItem("Email",emailValue);
-    localStorage.setItem("Phone",numberValue);
+    const UserDetails={
+        name:name,
+        email:emailValue,
+        number:numberValue
+
+    };
+
+    localStorage.setItem("User Details",JSON.stringify(UserDetails));
 
 
-})
+});
