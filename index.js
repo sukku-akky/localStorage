@@ -20,6 +20,15 @@ form.addEventListener("submit",function(event){
     const newLi=document.createElement("li");
     newLi.innerHTML=`${name}-${emailValue}-${numberValue}`;
     list.appendChild(newLi);
+    const button=document.createElement("input");
+    button.value="Delete";
+    button.type="button";
+    newLi.appendChild(button);
+    button.addEventListener("click",function(event){
+        event.preventDefault();
+        list.removeChild(button.parentNode);
+    });
+
 
 
     localStorage.setItem(emailValue,JSON.stringify(UserDetails));
