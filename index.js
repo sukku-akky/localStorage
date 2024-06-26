@@ -2,7 +2,7 @@ const userName=document.getElementById("username");
 const email=document.getElementById("email");
 const number=document.getElementById("phone");
 const button=document.getElementById("submit");
-
+const list=document.getElementById("user-list");
 const form=document.querySelector("form");
 form.addEventListener("submit",function(event){
     event.preventDefault();
@@ -17,8 +17,12 @@ form.addEventListener("submit",function(event){
         number:numberValue
 
     };
+    const newLi=document.createElement("li");
+    newLi.innerHTML=`${name}-${emailValue}-${numberValue}`;
+    list.appendChild(newLi);
 
-    localStorage.setItem("User Details",JSON.stringify(UserDetails));
+
+    localStorage.setItem(emailValue,JSON.stringify(UserDetails));
 
 
 });
